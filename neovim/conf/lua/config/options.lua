@@ -33,7 +33,11 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Allow block folding in Vim editors
-vim.opt.foldmethod = 'indent'
+if vim.api.nvim_win_get_option(0, 'diff') then
+  vim.opt.foldmethod = 'diff'
+else
+  vim.opt.foldmethod = 'indent'
+end
 
 -- Enable termguicolors, especially to let bufferline.nvim plugin work
 -- ("as it reads the hex "gui" color values of various highlight groups")

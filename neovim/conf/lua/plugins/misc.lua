@@ -1,6 +1,17 @@
 return {
   -- Helper for git difftool / mergetool
-  "sindrets/diffview.nvim",
+  {
+    "sindrets/diffview.nvim",
+    opts = {
+      hooks = {
+        diff_buf_read = function(_)
+          -- Change local options in diff buffers
+          vim.opt_local.wrap = true
+          vim.opt.wrap = true
+        end
+      }
+    }
+  },
 
   -- Git command bindings
   "tpope/vim-fugitive",
@@ -13,7 +24,8 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       -- Not doing great, e.g. with Ansible...
-      highlight = { enable = false }
+      highlight = { enable = false },
+      indent = { enable = false }
     }
   },
   "nvim-treesitter/playground",
