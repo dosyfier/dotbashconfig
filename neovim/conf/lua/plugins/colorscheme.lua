@@ -34,31 +34,19 @@ return {
         hl.Comment.fg = c.warmgray
 
         -- Constant
-        hl.Constant = {
-          fg = c.gold,
-          style = { bold = true, italic = true }
-        }
+        hl.Constant = { fg = c.gold, bold = true, italic = true }
         hl.String = { fg = c.lightyellow }
-        hl.Character = {
-          fg = c.lightyellow,
-          style = { bold = true }
-        }
-        hl.Boolean = {
-          fg = c.lightyellow,
-          style = { bold = true, italic = true }
-        }
-        hl.Number = {
-          fg = c.orange,
-          style = { bold = true, italic = true }
-        }
+        hl.Character = { fg = c.lightyellow, bold = true }
+        hl.Boolean = { fg = c.lightyellow, bold = true, italic = true }
+        hl.Number = { fg = c.orange, bold = true, italic = true }
         hl.Float = { link = "Number" }
 
         -- Variable names
-        hl.Identifier = { fg = c.salmonpink, style = { bold = true } }
-        hl.Function = { fg = c.magenta, style = { bold = true } }
+        hl.Identifier = { fg = c.salmonpink, bold = true }
+        hl.Function = { fg = c.magenta, bold = true }
 
         -- Statements
-        hl.Statement = { fg = c.cyan, style = { bold = true } }
+        hl.Statement = { fg = c.cyan, bold = true }
         hl.Conditional = { link = "Statement" }
         hl.Repeat = { link = "Statement" }
         hl.Label = { link = "Statement" }
@@ -67,33 +55,33 @@ return {
         hl.Exception = { link = "Statement" }
 
         -- Preprocessor
-        hl.PreProc = { fg = c.warmgreen, style = { bold = true } }
+        hl.PreProc = { fg = c.warmgreen, bold = true }
         hl.Include = { link = "PreProc" }
         hl.Define = { link = "PreProc" }
         hl.Macro = { link = "PreProc" }
         hl.PreCondit = { link = "PreProc" }
 
         -- Type
-        hl.Type = { fg = c.seagreen, style = { bold=true } }
+        hl.Type = { fg = c.seagreen, bold=true }
         hl.StorageClass = { link = "Type" }
         hl.Structure = { link = "Type" }
         hl.Typedef = { link = "Type" }
 
         -- Special
         hl.Special.fg = c.rust
-        hl.SpecialComment = { style = { bold = true } }
+        hl.SpecialComment = { bold = true }
 
         -- Diff mode
         hl.DiffAdd = { bg = "#afd75f", fg = "#000000" }
         hl.DiffChange = { bg = "#ffafaf", fg = "#000000" }
         hl.DiffDelete = { bg = "#ff87af", fg = "#000000" }
-        hl.DiffText = { bg = "#b2b2b2", fg = "#000000", style = { bold = true } }
+        hl.DiffText = { bg = "#b2b2b2", fg = "#000000", bold = true }
 
         -- Treesitter
-        hl["@keyword.import"] = { fg = c.lightgreen, style = { bold = true } }
+        hl["@keyword.import"] = { fg = c.lightgreen, bold = true }
 
         -- LSP
-        hl["@lsp.type.keyword"] = { fg = c.green, style = { bold = true } }
+        hl["@lsp.type.keyword"] = { fg = c.green, bold = true }
 
         -- Make
         hl.makeCommands = { fg = c.lightgold }
