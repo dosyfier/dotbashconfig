@@ -3,7 +3,7 @@
 # shellcheck source=../internal/install-base.sh
 source "$(dirname "$0")/../internal/install-base.sh"
 
-NEOVIM_VERSION=v0.9.5
+NEOVIM_VERSION=v0.10.4
 NEOVIM_ARCHIVE_NAME=nvim-linux64.tar.gz
 NEOVIM_DOWNLOAD_URL=https://github.com/neovim/neovim/releases/download/$NEOVIM_VERSION/$NEOVIM_ARCHIVE_NAME
 
