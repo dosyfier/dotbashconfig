@@ -31,7 +31,18 @@ get_resources() {
 update() {
   git -C "$HOME"/.oh-my-zsh pull
   git -C "$HOME"/.oh-my-zsh/custom/themes/powerlevel10k pull
-  source "$HOME"/.oh-my-zsh/custom/themes/powerlevel10k/gitstatus/build.info
+
+  gitstatus_build_info_file="$HOME/.oh-my-zsh/custom/themes/powerlevel10k/gitstatus/build.info"
+  echo "Reading $gitstatus_build_info_file..."
+  # shellcheck source=$HOME/.oh-my-zsh/custom/themes/powerlevel10k/gitstatus/build.info"
+  source "$gitstatus_build_info_file"
+  if [ -z "$gitstatus_version" ]; then
+    echo "No gitstatus_version found in $gitstatus_build_info_file. Aborting" >&2
+    return 1
+  else
+    echo "Gitstatus version: $gitstatus_version"
+  fi
+
   curl -sSfL "https://github.com/romkatv/gitstatus/releases/download/${gitstatus_version}/gitstatusd-linux-x86_64.tar.gz" | \
     tar xzf - -C "$HOME"/.oh-my-zsh/custom/themes/powerlevel10k/gitstatus/usrbin/
 }
