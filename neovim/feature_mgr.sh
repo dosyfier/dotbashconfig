@@ -25,7 +25,7 @@ install_wsl() {
 }
 
 _install() {
-  sudo bash -c "curl -L '$NEOVIM_DOWNLOAD_URL' | tar -C /opt -xz"
+  sudo bash -c "curl -L '$NEOVIM_DOWNLOAD_URL' | tar -C $DOTFILES_TOOLS_DIR -xz"
   ln -s "$FEATURE_ROOT/conf" "${XDG_CONFIG_HOME:-$HOME/.config}/nvim"
 }
 
