@@ -18,6 +18,9 @@ return  {
             ["c"] = { "copy", config = { show_path = "relative" }},
             ["m"] = { "move", config = { show_path = "relative" }},
           }
+        },
+        filesystem = {
+          follow_current_file = { enable = true }
         }
       })
     end,
