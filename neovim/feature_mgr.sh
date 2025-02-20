@@ -3,9 +3,13 @@
 # shellcheck source=../internal/install-base.sh
 source "$(dirname "$0")/../internal/install-base.sh"
 
-NEOVIM_VERSION=v0.10.4
+NEOVIM_VERSION=0.10.4
 NEOVIM_ARCHIVE_NAME=nvim-linux64.tar.gz
-NEOVIM_DOWNLOAD_URL=https://github.com/neovim/neovim/releases/download/$NEOVIM_VERSION/$NEOVIM_ARCHIVE_NAME
+NEOVIM_DOWNLOAD_URL=https://github.com/neovim/neovim/releases/download/v$NEOVIM_VERSION/$NEOVIM_ARCHIVE_NAME
+
+FZF_VERSION=0.60.0
+FZF_ARCHIVE_NAME=fzf-$FZF_VERSION-linux_amd64.tar.gz
+FZF_DOWNLOAD_URL=https://github.com/junegunn/fzf/releases/download/v$FZF_VERSION/$FZF_ARCHIVE_NAME
 
 get_dependencies() {
   if ! command -v git > /dev/null 2>&1; then
@@ -18,6 +22,7 @@ get_dependencies() {
 
 _download_and_install() {
   sudo bash -c "curl -sSfL '$NEOVIM_DOWNLOAD_URL' | tar -C $DOTFILES_TOOLS_DIR -xz"
+  sudo bash -c "curl -sSfL '$FZF_DOWNLOAD_URL' | tar -C /usr/local/bin -xz"
 }
 
 install_common() {
