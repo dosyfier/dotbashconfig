@@ -25,7 +25,14 @@ return {
         pyright = {},
         -- TODO: https://github.com/palantir/python-language-server
         rubocop = {},
-        yamlls = {},
+        yamlls = {
+          settings = {
+            yaml = {
+              -- Cf. https://github.com/redhat-developer/vscode-yaml/issues/703#issuecomment-1566947989
+              customTags = {'!vault scalar'}
+            }
+          }
+        },
       },
       -- This commented-out block of code may allow to turn off
       -- supplemental color highlighting applied by nvim-lspconfig.
